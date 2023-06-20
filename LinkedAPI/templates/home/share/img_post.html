@@ -1,0 +1,24 @@
+{% extends 'basic.html' %}
+
+{% block title %}Share image Posts{% endblock title %}
+{% block body %}
+    <div class="container">
+        <form action="/img_post" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="image"><strong>Share Image post</strong></label><br>
+            <input type="text" id="f_data" name="f_data" placeholder="What's on your mind" required><br>
+            <label for="image">Image</label><br>
+            <input type="file" id="img" name="img" required><br>
+            <label for="img_title">Image Title</label><br>
+            <input type="text" id="img_title" name="img_title" required><br>
+            <label for="img_desc">Image Description</label><br>
+            <input type="text" id="img_desc" name="img_desc" required><br>
+            <label for="t_type">Target Audience</label><br>
+            <select name="t_type" id="t_type" class="form-control" required="required">
+                <option value="PUBLIC">public</option>
+                <option value="CONNECTIONS">connections</option>    
+            <select><br>
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+{% endblock body %}

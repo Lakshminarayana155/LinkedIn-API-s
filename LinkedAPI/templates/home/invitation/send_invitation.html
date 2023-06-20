@@ -1,0 +1,17 @@
+{% extends 'basic.html' %}
+
+{% block title %}Send Invitations{% endblock title %}
+{% block body %}
+    <div class="container">
+        <form action="/send_invitation" method="POST">
+            {% csrf_token %}
+            <label for="invitee">Invitee:</label><br>
+            <input type="text" id="invitee" name="invitee" required><br>
+            <label for="msg">Message:</label><br>
+            <input type="text" id="msg" name="msg" required><br>
+
+            {% comment %} public or connections scope should be defined {% endcomment %}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+{% endblock body %}

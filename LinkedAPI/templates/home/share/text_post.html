@@ -1,0 +1,15 @@
+{% extends 'basic.html' %}
+
+{% block title %}Share text post{% endblock title %}
+{% block body %}
+    <div class="container">
+        <form action="/txt_post" method="POST">
+            {% csrf_token %}
+            <label for="name">Enter text to post:</label>
+            <input type="text" id="data" name="data" required>
+            {% comment %} public or connections scope should be defined {% endcomment %}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+{% endblock body %}

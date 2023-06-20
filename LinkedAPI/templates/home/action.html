@@ -1,0 +1,87 @@
+{% extends 'basic.html' %}
+
+{% block title %}
+    User
+{% endblock title %}
+
+{% block body %}
+    {% comment %} <div class="container">
+        <p>Welcome {{name}}</p>
+        <p>Choose the below options to perform a action</p>
+
+        <div id="send-req">
+        <p>send connection request</p>
+        <button><a href=""></a>Click Here</button>
+        </div>
+
+        <div id="message">
+        <p>Send message</p>
+        <button>Click Here</button>
+        </div>
+    </div> {% endcomment %}
+
+    <div class="row mb-2" style="margin-top: 10px; margin-left: 10px;">
+        <div class="col-md-5">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">Share a Post</strong>
+              <p class="card-text mb-auto">Send text, article or image post into your linkedIn directly form our site</p>
+              <div class="container" style="margin-top: 20px;">
+                <form action="/share" method="GET">
+                    <select name="type" id="type" class="form-control" required="required">
+                    <option value="">Select Post Type</option>
+                    <option value="text">Share Text Post</option>
+                    <option value="link">Share Article/Link Post</option>
+                    <option value="image">Share Image Post</option>
+                    <select>
+                    <br>
+                    <input type="submit" class="btn btn-danger btn-block" value="Proceed">
+                </form>
+            </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Send Connection Request</strong>
+                <p class="card-text mb-auto">Add more connections to your linkedIn profile directly from our site.</p>
+                <a class="btn btn-primary" href="/send_invitation" role="button">Click Here</a>
+              </div>
+              
+            </div>
+        </div>
+
+        <div class="col-md-5">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Send messages</strong>
+              <p class="mb-auto">Interact with your connections and never miss a message.</p>
+              <a class="btn btn-primary" href="#" role="button">Click Here</a>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-success">Interact with posts</strong>
+                <p class="mb-auto">Interact with your posts and know what is happening over.</p>
+                <a class="btn btn-primary" href="#" role="button">Click Here</a>
+              </div>
+              </div>
+          </div>
+      
+    </div>
+    
+
+    <div id="info" style="margin-top: 10px; margin-left: 20px;">
+        <p>Auth code is: {{auth_code}}</p>
+        <p>State is: {{state}}</p>
+        <p>access_token is: {{access_token}}</p>
+        <p>user data is: {{user_data}}</p>
+    </div>
+{% endblock body %}
+

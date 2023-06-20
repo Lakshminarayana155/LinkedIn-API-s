@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block title %}Share Article/Link post{% endblock title %}
+{% block body %}
+    <div class="container">
+        <form action="/article_post" method="POST">
+            {% csrf_token %}
+            <label for="name"><strong>Share Article/Link post</strong></label><br>
+            <input type="text" id="f_data" name="f_data" placeholder="What's on your mind" required><br>
+            <label for="link_title">Link Title</label><br>
+            <input type="text" id="l_title" name="l_title" required><br>
+            <label for="link_desc">Link Description</label><br>
+            <input type="text" id="l_desc" name="l_desc" required><br>
+            <label for="link_url">Link URL</label><br>
+            <input type="text" id="l_url" name="l_url" required><br>
+            <label for="target">Choose Target</label><br>
+            <select name="t_type" id="t_type" class="form-control" required="required">
+                <option value="PUBLIC">public</option>
+                <option value="CONNECTIONS">connections</option>    
+            <select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+{% endblock body %}
